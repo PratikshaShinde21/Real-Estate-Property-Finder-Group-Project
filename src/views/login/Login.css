@@ -23,7 +23,8 @@
   background: #f9f8f8;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   position: relative;
-  z-index: 1; /* keep it below the navbar's own z-index */
+  z-index: 1;
+  /* keep it below the navbar's own z-index */
 }
 
 .auth-card {
@@ -218,6 +219,7 @@
   height: 18px;
   object-fit: contain;
 }
+
 .auth-social-icon {
   width: 20px;
   height: 20px;

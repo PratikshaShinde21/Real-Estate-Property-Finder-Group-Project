@@ -228,9 +228,18 @@ body.dark-mode .hamburger-btn {
     text-align: left;
     font-size: 16px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+  }
+
+  .mobile-menu button svg {
+    font-size: 15px;
   }
 
   .mobile-menu button:hover {
     background: #f5f5f5;
+
   }
 }

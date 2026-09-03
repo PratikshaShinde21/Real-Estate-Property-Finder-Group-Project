@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import homedata from "../../data/homedata.json";
+
+import villaone from "../../assets/villaone.jpeg";
+import villathree from "../../assets/villathree.jpeg";
+import rowbanglothree from "../../assets/rowbanglothree.jpeg";
+import rowbangloone from "../../assets/rowbangloone.jpeg";
+import villafour from "../../assets/villafour.jpeg";
+import rowbanglotwo from "../../assets/rowbanglotwo.jpeg";
+import plottwo from "../../assets/plottwo.jpeg";
+
+import pune from "../../assets/pune.jpeg";
+import mumbai from "../../assets/mumbai.jpeg";
+import nashik from "../../assets/nashik.jpeg";
+import nagpur from "../../assets/nagpur.jpeg";
+import ahilyanagaro from "../../assets/ahilyanagaro.jpeg";
+import propertyexpert from "../../assets/propertyexpert.mp4";
+
 import { useNavigate } from "react-router-dom";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -16,7 +32,23 @@ import {
 import { FiMessageCircle } from "react-icons/fi";
 
 function Home() {
+
   const navigate = useNavigate();
+  const imageMap = {
+    "villaone.jpeg": villaone,
+    "villathree.jpeg": villathree,
+    "rowbanglothree.jpeg": rowbanglothree,
+    "rowbangloone.jpeg": rowbangloone,
+    "villafour.jpeg": villafour,
+    "rowbanglotwo.jpeg": rowbanglotwo,
+    "plottwo.jpeg": plottwo,
+
+    "pune.jpeg": pune,
+    "mumbai.jpeg": mumbai,
+    "nashik.jpeg": nashik,
+    "nagpur.jpeg": nagpur,
+    "ahilyanagaro.jpeg": ahilyanagaro,
+  };
 
   const [properties, setProperties] =
     useState([]);
@@ -60,7 +92,7 @@ function Home() {
   return (
     <main className="home">
       {/* HERO  */}
-      <HeroSlider slides={homedata.slides} />
+      <HeroSlider slides={homedata.slides.map((slide) => ({ ...slide, image: imageMap[slide.image], }))} />
 
       {/* EXPLORE BY CITIES */}
 
@@ -77,7 +109,7 @@ function Home() {
             <CityCard
               key={city.name}
               name={city.name}
-              image={city.image}
+              image={imageMap[city.image]}
               properties={city.properties}
               description={city.description}
               price={city.price}
@@ -105,16 +137,13 @@ function Home() {
 
         <div className="featured-container">
           {properties.map((property) => {
-            const imageSrc = property.image?.startsWith("/")
-              ? property.image
-              : `/${property.image}`;
 
             return (
               <PropertyCard
                 key={property.id}
                 id={property.id}
-                image={imageSrc}
-                title={property.title}
+                image={imageMap[property.image]}
+                title={property.name}
                 type={property.type}
                 city={property.city}
                 price={property.price}
@@ -161,11 +190,11 @@ function Home() {
 
                   const user = localStorage.getItem("user");
 
-                  /*  if (!user) {
-                        alert("Please login first to book a consultation 🔐");
-                        navigate("/login");
-                        return;
-                      } */
+                  if (!user) {
+                    alert("Please login first to book a consultation ");
+                    navigate("/login");
+                    return;
+                  }
 
                   navigate("/about#consultation");
                 }}
@@ -185,7 +214,7 @@ function Home() {
 
           <div className="agent-video">
             <video autoPlay muted loop playsInline>
-              <source src="/property-expert.mp4" type="video/mp4" />
+              <source src={propertyexpert} type="video/mp4" />
             </video>
           </div>
         </div>

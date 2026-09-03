@@ -8,10 +8,11 @@ import {
   FiSliders,
   FiSearch,
   FiStar,
-  FiHeart,
-  FiMessageCircle
+ FiHeart ,
+  FiMessageCircle,
+  FiHeadphones
 } from "react-icons/fi";
-
+import { FaHeart } from "react-icons/fa";
 import {
   MapContainer,
   TileLayer,
@@ -24,7 +25,24 @@ import "leaflet/dist/leaflet.css";
 {/* NAVBAR */ }
 
 export function Navbar() {
+  c
   const navigate = useNavigate();
+
+
+useEffect(() => {
+  const user = JSON.parse(localStorage.getItem("currentUser"));
+
+  if (!user) return;
+
+  const wishlistKey = "wishlist_" + user.mobile;
+
+  const wishlist =
+    JSON.parse(localStorage.getItem(wishlistKey)) || [];
+
+  setIsWishlisted(
+    wishlist.some((item) => item.id === id)
+  );
+}, [id]);
 
   const [darkMode, setDarkMode] = useState(false);
 
@@ -67,7 +85,7 @@ export function Navbar() {
           onClick={toggleTheme}
           aria-label="Toggle theme"
         >
-          {darkMode ? "☀️" : "🌙"}
+          {darkMode ? <FiSun /> : <FiMoon />}
         </button>
 
       </div>
@@ -220,7 +238,7 @@ export function HeroSlider({ slides }) {
           <div className="rating">
 
             <span className="stars">
-              ★★★★★
+              <FiStar />  <FiStar />  <FiStar /> <FiStar />  <FiStar />
             </span>
 
             <div>
@@ -310,15 +328,12 @@ export function CityCard({
             )
           }
         >
-          Explore →
+          <FiSearch /> Explore
         </button>
       </div>
     </div>
   );
 }
-
-// PROPERTY CARD // 
-
 export function PropertyCard({
   id,
   image,
@@ -328,95 +343,146 @@ export function PropertyCard({
   price,
   rating,
 }) {
-
   const navigate = useNavigate();
+const [isWishlisted, setIsWishlisted] = useState(false);
+useEffect(() => {
+  const user = JSON.parse(
+    localStorage.getItem("currentUser")
+  );
+
+  if (!user) return;
+
+  const wishlistKey = "wishlist_" + user.mobile;
+
+  const wishlist =
+    JSON.parse(localStorage.getItem(wishlistKey)) || [];
+
+  setIsWishlisted(
+    wishlist.some((item) => item.id === id)
+  );
+}, [id]);
+  const handleWishlist = () => {
+    const user = JSON.parse(
+      localStorage.getItem("currentUser")
+    );
+
+    if (!user) {
+      alert("Please login first to add property to Wishlist.");
+      navigate("/login");
+      return;
+    }
+
+    const wishlistKey = "wishlist_" + user.mobile;
+
+    const wishlist =
+      JSON.parse(localStorage.getItem(wishlistKey)) || [];
+
+    const property = {
+      id,
+      image,
+      title,
+      type,
+      city,
+      price,
+      rating,
+    };
+
+    const alreadyAdded = wishlist.some(
+      (item) => item.id === id
+    );
+
+    if (alreadyAdded) {
+      const updatedWishlist = wishlist.filter(
+        (item) => item.id !== id
+      );
+localStorage.setItem(
+  wishlistKey,
+  JSON.stringify(updatedWishlist)
+);
+
+setIsWishlisted(false);
+
+alert("Removed from Wishlist.");
+return;
+    }
+
+    const updatedWishlist = [
+      ...wishlist,
+      property,
+    ];
+localStorage.setItem(
+  wishlistKey,
+  JSON.stringify(updatedWishlist)
+);
+
+setIsWishlisted(true);
+
+alert("Successfully added to Wishlist ❤️");
+  };
 
   return (
-    <div className="property-card">
+  <div className="property-card">
 
-      <div className="property-image">
+    <div className="property-image-container">
+      <img
+        src={image}
+        alt={title}
+        className="property-image"
+      />
 
-        <img
-          src={image}
-          alt={title}
-        />
-
-        <span className="rating-badge">
-          ☆ {rating}
-        </span>
-
-      </div>
-
-
-      <div className="property-info">
-
-        <h3>{title}</h3>
-
-        <p>  🏢 Type: {type}  </p>
-
-        <p> <FiMapPin /> City: {city} </p>
-
-        <p>  ₹ Price: {price}   </p>
-
-        <p> ☆ Rating: {rating}  </p>
-
-
-        <button
-          className="wishlist-btn"
-          onClick={() => {
-
-            // Check if user is logged in
-           const user = localStorage.getItem("user");
-
-            if (!user) {
-              alert("Please login first to add property to Wishlist 🔐");
-              navigate("/login");
-              return;
-            } 
-
-            // Get existing wishlist
-            const wishlist =
-              JSON.parse(localStorage.getItem("wishlist")) || [];
-
-            const property = {
-              id,
-              image,
-              title,
-              type,
-              city,
-              price,
-              rating,
-            };
-
-            // Check duplicate
-            const alreadyAdded = wishlist.some(
-              (item) => item.id === id
-            );
-
-            if (!alreadyAdded) {
-
-              localStorage.setItem(
-                "wishlist",
-                JSON.stringify([
-                  ...wishlist,
-                  property
-                ])
-              );
-
-              alert("Successfully added to Wishlist ❤️");
-
-            } else {
-
-              alert("Already added to Wishlist ❤️");
-
-            }
-          }}
-        >
-          <FiHeart /> Add to Wishlist
-        </button>
-      </div>
+    <button
+  className={`wishlist-btn ${
+    isWishlisted ? "wishlisted" : ""
+  }`}
+  onClick={handleWishlist}
+  aria-label="Add to Wishlist"
+>
+  {isWishlisted ? (
+    <FaHeart
+      className="wishlist-heart"
+      color="#dc2626"
+    />
+  ) : (
+    <FiHeart
+      className="wishlist-heart"
+      color="#444"
+    />
+  )}
+</button>
     </div>
-  );
+
+    <div className="property-content">
+      <h3>{title}</h3>
+
+      <div className="property-meta">
+  <p className="property-type">
+    {type}
+  </p>
+
+  <p className="property-city">
+    <FiMapPin />
+    {city}
+  </p>
+   <p className="property-rating">
+        ⭐ {rating}
+      </p>
+
+</div>
+
+      <p className="property-price">
+       Price :  {price}
+      </p>
+
+           <button
+        className="view-details-btn"
+        onClick={handleWishlist}
+      >
+        Add to wishlist
+      </button>
+    </div>
+
+  </div>
+);
 }
 
 // SEARCH FROM MAP // 
@@ -509,8 +575,9 @@ export function SearchFromMap({
               className="map-search-btn"
               type="submit"
             >
+              <span className="starss" > <FiSearch /> </span>
               Search Properties
-              <span>→</span>
+
             </button>
 
           </form>
@@ -569,7 +636,12 @@ export function SearchFromMap({
 }
 
 // WHY CARD//
-
+const iconMap = {
+  home: <FiHome />,
+  search: <FiSearch />,
+  support: <FiHeadphones />,
+  value: <FiDollarSign />
+}
 export function WhyCard({
   icon,
   title,
@@ -577,10 +649,11 @@ export function WhyCard({
 }) {
 
   return (
+
     <div className="why-card">
 
       <div className="why-icon">
-        {icon}
+        {iconMap[icon] || icon}
       </div>
 
       <h3>

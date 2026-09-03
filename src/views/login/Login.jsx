@@ -94,7 +94,7 @@ export default function AuthPage() {
       } else if (isLogin && !rememberMe) {
         localStorage.removeItem("rememberedEmail");
       }
-
+      window.dispatchEvent(new Event("loginStatusChanged"))
       navigate("/properties");
     } finally {
       setSubmitting(false);
