@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
-// Image imports
 import userIcon from "../../assets/user.svg";
 import gmailIcon from "../../assets/gmail.png";
 import lockIcon from "../../assets/lock.png";
@@ -61,7 +60,6 @@ export default function AuthPage() {
     localStorage.setItem("user", JSON.stringify(userData));
     localStorage.setItem("isLoggedIn", "true");
 
-    // registered/logged-in users
     const existingUsers = JSON.parse(localStorage.getItem("users") || "[]");
     const alreadyExists = existingUsers.some((u) => u.email === userData.email);
     if (!alreadyExists) {
