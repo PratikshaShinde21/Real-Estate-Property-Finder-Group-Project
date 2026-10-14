@@ -1,24 +1,23 @@
-
 :root {
     /* Refined Color Palette */
-    --pd-bg: #faf9f6;
+    --pd-bg: #f9f8f8;
     --pd-surface: #ffffff;
-    --pd-surface-accent: #f4f2ee;
+    --pd-surface-accent: #f1f1f1;
 
-    --pd-ink: #1c1917;
-    --pd-ink-soft: #44403c;
-    --pd-text: #57534e;
-    --pd-muted: #8c857b;
+    --pd-ink: #222222;
+    --pd-ink-soft: #444444;
+    --pd-text: #666666;
+    --pd-muted: #777777;
 
     --pd-border: rgba(28, 25, 23, 0.08);
     --pd-border-strong: rgba(28, 25, 23, 0.18);
 
     /* Luxury Accents */
-    --pd-gold: #ab8248;
-    --pd-gold-hover: #8e6833;
-    --pd-gold-soft: rgba(171, 130, 72, 0.08);
-    --pd-green: #2e6f40;
-    --pd-red: #c94a4a;
+    --pd-gold: #ff8533;
+    --pd-gold-hover: #662a03;
+    --pd-gold-soft: rgba(255, 133, 51, 0.08);
+    --pd-green: #b34700;
+    --pd-red: #e65c00;
 
     /* Typography Hierarchy */
     --pd-display: 'Cinzel', Georgia, serif;
@@ -41,7 +40,7 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-margin-top:100px;
+    margin-top: 100px;
     padding: 24px clamp(16px, 4vw, 64px) 80px;
 
     background-color: var(--pd-bg);
@@ -72,11 +71,9 @@ margin-top:100px;
     width: 1px;
     height: 100px;
 
-    background: linear-gradient(
-        180deg,
-        var(--pd-gold),
-        transparent
-    );
+    background: linear-gradient(180deg,
+            var(--pd-gold),
+            transparent);
 
     opacity: 0.4;
 
@@ -115,7 +112,7 @@ margin-top:100px;
 }
 
 .back-button:hover {
-    color: var(--pd-gold);
+    color: #ff8533;
     transform: translateX(-3px);
 }
 
@@ -132,8 +129,7 @@ margin-top:100px;
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.05fr)
-        minmax(340px, 0.95fr);
+        minmax(0, 1.05fr) minmax(340px, 0.95fr);
 
     gap: clamp(32px, 4vw, 64px);
 
@@ -231,13 +227,13 @@ margin-top:100px;
 .detail-wishlist:hover {
     background: var(--pd-surface);
 
-    color: var(--pd-red);
+    color: #e65c00;
 
     transform: scale(1.08);
 }
 
 .detail-wishlist.wishlisted {
-    color: var(--pd-red);
+    color: #e65c00;
 
     background: var(--pd-surface);
 }
@@ -257,15 +253,14 @@ margin-top:100px;
 }
 
 .image-arrow:hover {
-    background: var(--pd-ink);
+    background: #662a03;
 
     color: var(--pd-surface);
 
-    border-color: var(--pd-ink);
+    border-color: #662a03;
 
     transform:
-        translateY(-50%)
-        scale(1.05);
+        translateY(-50%) scale(1.05);
 }
 
 .image-arrow-left {
@@ -319,7 +314,7 @@ margin-top:100px;
 .property-thumbnail.active {
     opacity: 1;
 
-    border-color: var(--pd-gold);
+    border-color: #ff8533;
 }
 
 .property-thumbnail img {
@@ -352,7 +347,7 @@ margin-top:100px;
 
     letter-spacing: 2px;
 
-    color: var(--pd-gold);
+    color: #ff8533;
 
     margin-bottom: 8px;
 }
@@ -438,7 +433,7 @@ margin-top:100px;
 
     border-radius: 100px;
 
-    background: rgba(46, 111, 64, 0.08);
+    background: rgba(255, 133, 51, 0.08);
 
     color: var(--pd-green);
 }
@@ -504,7 +499,7 @@ margin-top:100px;
 
     border-radius: 50%;
 
-    background-color: var(--pd-gold);
+    background-color: #ff8533;
 }
 
 
@@ -516,7 +511,7 @@ margin-top:100px;
     display: flex;
 
     align-items: center;
-gap:40px;
+    gap: 40px;
     justify-content: left;
 
     margin-bottom: 20px;
@@ -564,7 +559,7 @@ gap:40px;
 }
 
 .quantity-control button:hover {
-    background: var(--pd-surface-accent);
+    background: #fff1e7;
 }
 
 .quantity-control span {
@@ -653,12 +648,12 @@ gap:40px;
 }
 
 .detail-wishlist-button:hover {
-    border-color: var(--pd-red);
+    border-color: #e65c00;
 
-    color: var(--pd-red);
+    color: #e65c00;
 
     background:
-        rgba(201, 74, 74, 0.05);
+        rgba(230, 92, 0, 0.05);
 
     transform: translateY(-1px);
 }
@@ -668,23 +663,23 @@ gap:40px;
 
 .detail-wishlist-button.active,
 .detail-wishlist-button.wishlisted {
-    border-color: var(--pd-red) !important;
+    border-color: #e65c00 !important;
 
     background:
-        rgba(201, 74, 74, 0.08) !important;
+        rgba(230, 92, 0, 0.08) !important;
 
-    color: var(--pd-red) !important;
+    color: #e65c00 !important;
 }
 
 .detail-wishlist-button.active svg,
 .detail-wishlist-button.wishlisted svg,
 .detail-wishlist-button.active path,
 .detail-wishlist-button.wishlisted path {
-    fill: var(--pd-red) !important;
+    fill: #e65c00 !important;
 
-    stroke: var(--pd-red) !important;
+    stroke: #e65c00 !important;
 
-    color: var(--pd-red) !important;
+    color: #e65c00 !important;
 }
 
 
@@ -693,9 +688,9 @@ gap:40px;
    ========================================================= */
 
 .buy-now-button {
-    border: 1.5px solid var(--pd-ink);
+    border: 1.5px solid #ff8533;
 
-    background: var(--pd-ink);
+    background: #ff8533;
 
     color: #ffffff;
 
@@ -704,15 +699,14 @@ gap:40px;
 }
 
 .buy-now-button:hover {
-    background: var(--pd-gold);
+    background: #662a03;
 
-    border-color: var(--pd-gold);
+    border-color: #662a03;
 
     transform: translateY(-1px);
 
     box-shadow:
-        0 6px 20px
-        rgba(171, 130, 72, 0.25);
+        0 6px 20px rgba(255, 133, 51, 0.25);
 }
 
 
@@ -742,7 +736,7 @@ gap:40px;
 /* Section Headings */
 
 .why-shop-heading h2,
-.property-reviews > h2 {
+.property-reviews>h2 {
     font-family: var(--pd-display);
 
     font-size: 22px;
@@ -794,13 +788,13 @@ gap:40px;
     box-shadow: var(--pd-shadow-hover);
 
     border-color:
-        rgba(171, 130, 72, 0.3);
+        rgba(255, 133, 51, 0.3);
 }
 
 .why-shop-icon {
     font-size: 20px;
 
-    color: var(--pd-gold);
+    color: #ff8533;
 
     margin-bottom: 8px;
 }
@@ -851,7 +845,7 @@ gap:40px;
 
 .rating-star-button.selected,
 .rating-star-button:hover {
-    color: var(--pd-gold);
+    color: #ff8533;
 }
 
 
@@ -879,16 +873,15 @@ gap:40px;
 }
 
 .review-form textarea:focus {
-    border-color: var(--pd-gold);
+    border-color: #ff8533;
 
     box-shadow:
-        0 0 0 3px
-        var(--pd-gold-soft);
+        0 0 0 3px var(--pd-gold-soft);
 }
 
 .review-form button {
     margin-top: 10px;
-margin-bottom:30px;
+    margin-bottom: 30px;
     padding: 10px 20px;
 
     border: none;
@@ -896,8 +889,8 @@ margin-bottom:30px;
     border-radius: 6px;
     position: relative;
     top: 15px;
-    left:0px;
-    background: var(--pd-ink);
+    left: 0px;
+    background: #ff8533;
 
     color: var(--pd-surface);
 
@@ -915,7 +908,7 @@ margin-bottom:30px;
 }
 
 .review-form button:hover {
-    background: var(--pd-gold);
+    background: #662a03;
 }
 
 
@@ -947,13 +940,15 @@ margin-bottom:30px;
 .review-main-layout {
     width: 100%;
     display: flex;
-    gap:30px;
+    gap: 30px;
 }
-    .review-property-image img{
-        margin-top: -30px;
-        width:300px;
-        border-radius: 20px;
-    }
+
+.review-property-image img {
+    margin-top: -30px;
+    width: 300px;
+    border-radius: 20px;
+}
+
 /* =========================================================
    RESPONSIVE — TABLET
    ========================================================= */
@@ -1033,7 +1028,7 @@ margin-bottom:30px;
 
     background: transparent;
 
-    color: var(--pd-gold);
+    color: #ff8533;
 
     font-size: 12px;
     font-weight: 600;
@@ -1053,13 +1048,13 @@ margin-bottom:30px;
 
     flex-shrink: 0;
 
-    color: var(--pd-gold);
+    color: #ff8533;
 
     transition: color 0.25s ease;
 }
 
 .review-benefit:hover {
-    background: var(--pd-gold);
+    background: #ff8533;
     color: #fff;
 
     transform: translateY(-2px);
@@ -1100,7 +1095,9 @@ margin-bottom:30px;
         width: 13px;
         height: 13px;
     }
-}/* ================================
+}
+
+/* ================================
    REVIEW SECTION RESPONSIVENESS
    ================================ */
 
@@ -1137,7 +1134,7 @@ margin-bottom:30px;
         gap: 25px;
     }
 
-    .review-main-layout > div {
+    .review-main-layout>div {
         width: 100%;
     }
 
@@ -1213,5 +1210,413 @@ margin-bottom:30px;
 
     .review-property-image img {
         max-width: 230px;
+    }
+}
+
+/* =========================================================
+   DARK MODE — PROPERTY DETAIL PAGE
+========================================================= */
+
+body.dark-mode .property-detail-page {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+body.dark-mode .back-button {
+    color: #aaa;
+}
+
+body.dark-mode .back-button:hover {
+    color: #ff8533;
+}
+
+
+/* =========================================================
+   MAIN PROPERTY CONTENT
+========================================================= */
+
+body.dark-mode .property-detail-content h1 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .property-detail-description {
+    color: #b5b5b5;
+}
+
+body.dark-mode .property-detail-category {
+    color: #ff8533;
+}
+
+
+/* =========================================================
+   MAIN IMAGE
+========================================================= */
+
+body.dark-mode .property-detail-main-image {
+    background-color: #242424;
+    border-color: #333333;
+
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   IMAGE CONTROLS
+========================================================= */
+
+body.dark-mode .detail-wishlist,
+body.dark-mode .image-arrow {
+    background: rgba(30, 30, 30, 0.85);
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    color: #f5f5f5;
+}
+
+body.dark-mode .detail-wishlist:hover,
+body.dark-mode .image-arrow:hover {
+    background: #ff8533;
+
+    border-color: #ff8533;
+
+    color: #ffffff;
+}
+
+body.dark-mode .detail-wishlist.wishlisted {
+    background: #242424;
+
+    color: #e65c00;
+}
+
+
+/* =========================================================
+   THUMBNAILS
+========================================================= */
+
+body.dark-mode .property-thumbnail {
+    opacity: 0.6;
+}
+
+body.dark-mode .property-thumbnail:hover {
+    opacity: 0.9;
+}
+
+body.dark-mode .property-thumbnail.active {
+    opacity: 1;
+
+    border-color: #ff8533;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+body.dark-mode .property-detail-price {
+    border-top-color: #333333;
+    border-bottom-color: #333333;
+}
+
+body.dark-mode .property-detail-price del {
+    color: #999999;
+}
+
+body.dark-mode .property-detail-price strong {
+    color: #f5f5f5;
+}
+
+body.dark-mode .property-detail-price span {
+    background: rgba(255, 133, 51, 0.12);
+
+    color: #ff9b68;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+========================================================= */
+
+body.dark-mode .property-detail-highlights h3 {
+    color: #e5e5e5;
+}
+
+body.dark-mode .property-detail-highlights li {
+    color: #b5b5b5;
+}
+
+body.dark-mode .property-detail-highlights li::before {
+    background-color: #ff8533;
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+body.dark-mode .quantity-section h3 {
+    color: #e5e5e5;
+}
+
+body.dark-mode .quantity-control {
+    background: #1e1e1e;
+
+    border-color: #444444;
+}
+
+body.dark-mode .quantity-control button {
+    color: #f5f5f5;
+}
+
+body.dark-mode .quantity-control button:hover {
+    background: #30231b;
+}
+
+body.dark-mode .quantity-control span {
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   WISHLIST BUTTON
+========================================================= */
+
+body.dark-mode .detail-wishlist-button {
+    background: transparent;
+
+    border-color: #444444;
+
+    color: #f5f5f5;
+}
+
+body.dark-mode .detail-wishlist-button:hover {
+    background: rgba(230, 92, 0, 0.10);
+
+    border-color: #e65c00;
+
+    color: #ff8533;
+}
+
+body.dark-mode .detail-wishlist-button.active,
+body.dark-mode .detail-wishlist-button.wishlisted {
+    background: rgba(230, 92, 0, 0.12) !important;
+
+    border-color: #e65c00 !important;
+
+    color: #ff8533 !important;
+}
+
+
+/* =========================================================
+   BUY NOW
+========================================================= */
+
+body.dark-mode .buy-now-button {
+    background: #ff8533;
+
+    border-color: #ff8533;
+
+    color: #ffffff;
+}
+
+body.dark-mode .buy-now-button:hover {
+    background: #662a03;
+
+    border-color: #662a03;
+}
+
+
+/* =========================================================
+   LOWER SECTION
+========================================================= */
+
+body.dark-mode .property-bottom-sections {
+    border-top-color: #333333;
+}
+
+body.dark-mode .why-shop-heading h2,
+body.dark-mode .property-reviews>h2 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .why-shop-heading p {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   WHY SHOP CARDS
+========================================================= */
+
+body.dark-mode .why-shop-card {
+    background: #1e1e1e;
+
+    border-color: #333333;
+
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .why-shop-card:hover {
+    border-color: rgba(255, 133, 51, 0.5);
+
+    box-shadow:
+        0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .why-shop-icon {
+    color: #ff8533;
+}
+
+body.dark-mode .why-shop-card h3 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .why-shop-card p {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   RATING
+========================================================= */
+
+body.dark-mode .rating-star-button {
+    color: #444444;
+}
+
+body.dark-mode .rating-star-button.selected,
+body.dark-mode .rating-star-button:hover {
+    color: #ff8533;
+}
+
+
+/* =========================================================
+   REVIEW FORM
+========================================================= */
+
+body.dark-mode .review-form textarea {
+    background: #1e1e1e;
+
+    border-color: #444444;
+
+    color: #f5f5f5;
+}
+
+body.dark-mode .review-form textarea::placeholder {
+    color: #888888;
+}
+
+body.dark-mode .review-form textarea:focus {
+    border-color: #ff8533;
+
+    background: #202020;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 133, 51, 0.12);
+}
+
+body.dark-mode .review-form button {
+    background: #ff8533;
+
+    color: #ffffff;
+}
+
+body.dark-mode .review-form button:hover {
+    background: #662a03;
+}
+
+
+/* =========================================================
+   REVIEW CARDS
+========================================================= */
+
+body.dark-mode .review-card {
+    border-bottom-color: #333333;
+}
+
+body.dark-mode .review-card-header h4 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .review-card p {
+    color: #b5b5b5;
+}
+
+
+/* =========================================================
+   REVIEW BENEFITS
+========================================================= */
+
+body.dark-mode .review-benefit {
+    background: transparent;
+
+    border-color: #ff8533;
+
+    color: #ff8533;
+}
+
+body.dark-mode .review-benefit svg {
+    color: #ff8533;
+}
+
+body.dark-mode .review-benefit:hover {
+    background: #ff8533;
+
+    color: #ffffff;
+}
+
+body.dark-mode .review-benefit:hover svg {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   REVIEW PROPERTY IMAGE
+========================================================= */
+
+body.dark-mode .review-property-image img {
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   MOBILE DARK MODE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    body.dark-mode .property-detail-page {
+        background-color: #121212;
+    }
+
+    body.dark-mode .property-detail-main-image {
+        background-color: #242424;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    body.dark-mode .property-detail-page {
+        background-color: #121212;
+    }
+
+    body.dark-mode .why-shop-card {
+        background: #1e1e1e;
+    }
+
+    body.dark-mode .detail-wishlist-button {
+        background: #1e1e1e;
     }
 }

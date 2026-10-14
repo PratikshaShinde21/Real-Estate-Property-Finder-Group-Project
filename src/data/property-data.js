@@ -377,7 +377,7 @@ const properties = [
             "Security"
         ]
     },
-{
+    {
         id: 19,
         name: "2 BHK Apartment in Pashan, Pune",
         description: "Modern 2 BHK apartment in Pashan with approximately 1050 sq.ft. area. The apartment includes two bedrooms, two bathrooms, living room, kitchen, balcony and society parking.",

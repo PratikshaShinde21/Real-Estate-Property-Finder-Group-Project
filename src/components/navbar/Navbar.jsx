@@ -49,7 +49,7 @@ function Navbar() {
     // Initial check
     updateLoginStatus();
 
-    // Login झाल्यावर status update
+
     window.addEventListener(
       "loginStatusChanged",
       updateLoginStatus
@@ -87,13 +87,12 @@ function Navbar() {
     localStorage.removeItem("user");
     localStorage.removeItem("isLoggedIn");
 
-    // Navbar मध्ये Login दाखवण्यासाठी
     setIsLoggedIn(false);
 
     // Menu close
     setMenuOpen(false);
 
-    // Login page वर जा
+
     navigate("/login");
   };
 
@@ -129,24 +128,10 @@ function Navbar() {
         </button>
 
         <button
-          onClick={() => navigate("/about")}
-        >
-          <FiInfo />
-          About
-        </button>
-
-        <button
           onClick={() => navigate("/property")}
         >
           <FiHome />
-          Properties
-        </button>
-
-        <button
-          onClick={() => navigate("/cart")}
-        >
-          <FiShoppingCart />
-          Cart
+          Property
         </button>
 
         <button
@@ -155,6 +140,22 @@ function Navbar() {
           <FiHeart />
           Wishlist
         </button>
+
+        <button
+          onClick={() => navigate("/about")}
+        >
+          <FiInfo />
+          About
+        </button>
+
+
+        <button
+          onClick={() => navigate("/cart")}
+        >
+          <FiShoppingCart />
+          Cart
+        </button>
+
 
         {/* ================= LOGIN / LOGOUT ================= */}
 
@@ -210,8 +211,8 @@ function Navbar() {
 
       <div
         className={`mobile-menu ${menuOpen
-            ? "mobile-menu-open"
-            : ""
+          ? "mobile-menu-open"
+          : ""
           }`}
       >
 
@@ -232,7 +233,7 @@ function Navbar() {
           }}
         >
           <FiHome />
-          Properties
+          Property
         </button>
 
         <button

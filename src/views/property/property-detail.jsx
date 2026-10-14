@@ -755,7 +755,7 @@ function PropertyDetail() {
                         <img
                             src={
                                 property.images?.[
-                                    currentImageIndex
+                                currentImageIndex
                                 ]
                             }
                             alt={
@@ -1296,314 +1296,314 @@ function PropertyDetail() {
                 {/* =================================================
                     CUSTOMER REVIEWS
                 ================================================= */}
-<section className="property-reviews">
+                <section className="property-reviews">
 
-    {/* =====================================================
+                    {/* =====================================================
         SECTION TITLE
     ===================================================== */}
 
-    <h2>
-        Customer Reviews
-    </h2>
+                    <h2>
+                        Customer Reviews
+                    </h2>
 
 
-    {/* =====================================================
+                    {/* =====================================================
         MAIN LEFT + RIGHT LAYOUT
     ===================================================== */}
 
-    <div className="review-main-layout">
+                    <div className="review-main-layout">
 
 
-        {/* =================================================
+                        {/* =================================================
             LEFT SIDE — REVIEW
         ================================================= */}
 
-        <div className="review-left">
+                        <div className="review-left">
 
 
-            {/* ================= RATING ================= */}
+                            {/* ================= RATING ================= */}
 
-            <div className="rating-section">
+                            <div className="rating-section">
 
-                <h3>
-                    Rate This Property
-                </h3>
+                                <h3>
+                                    Rate This Property
+                                </h3>
 
 
-                <div className="rating-stars">
+                                <div className="rating-stars">
 
-                    {[1, 2, 3, 4, 5].map(
+                                    {[1, 2, 3, 4, 5].map(
 
-                        (rating) => (
+                                        (rating) => (
 
-                            <button
-                                key={rating}
-                                type="button"
-                                className={
-                                    rating <= selectedRating
-                                        ? "rating-star-button selected"
-                                        : "rating-star-button"
-                                }
-                                onClick={() =>
-                                    rateProperty(rating)
-                                }
-                            >
+                                            <button
+                                                key={rating}
+                                                type="button"
+                                                className={
+                                                    rating <= selectedRating
+                                                        ? "rating-star-button selected"
+                                                        : "rating-star-button"
+                                                }
+                                                onClick={() =>
+                                                    rateProperty(rating)
+                                                }
+                                            >
 
-                                {rating <= selectedRating ? (
+                                                {rating <= selectedRating ? (
 
-                                    <FaStar />
+                                                    <FaStar />
 
-                                ) : (
+                                                ) : (
 
-                                    <FaRegStar />
+                                                    <FaRegStar />
 
-                                )}
+                                                )}
 
-                            </button>
+                                            </button>
 
-                        )
+                                        )
 
-                    )}
-
-                </div>
-
-
-                {selectedRating > 0 && (
-
-                    <p>
-
-                        You rated this property{" "}
-
-                        <strong>
-                            {selectedRating}
-                        </strong>
-
-                        {" "}out of 5
-
-                    </p>
-
-                )}
-
-            </div>
-
-
-            {/* ================= REVIEW FORM ================= */}
-
-            <div className="review-form">
-
-                <textarea
-                    value={reviewText}
-                    onChange={(e) =>
-                        setReviewText(
-                            e.target.value
-                        )
-                    }
-                    placeholder="Write your review..."
-                />
-
-
-                <button
-                    onClick={submitReview}
-                >
-
-                    Submit Review
-
-                </button>
-
-            </div>
-
-
-            {/* ================= EXISTING REVIEWS ================= */}
-
-            <div className="reviews-container">
-
-                {reviews.length === 0 ? (
-
-                    <p className="no-reviews">
-
-                        No reviews yet.
-                        Be the first to review this property.
-
-                    </p>
-
-                ) : (
-
-                    reviews.map(
-
-                        (review, index) => (
-
-                            <div
-                                className="review-card"
-                                key={index}
-                            >
-
-
-                                <div className="review-card-header">
-
-
-                                    <div>
-
-                                        <h4>
-
-                                            {review.name}
-
-                                        </h4>
-
-
-                                        <div className="review-stars">
-
-                                            {[1, 2, 3, 4, 5].map(
-
-                                                star => (
-
-                                                    star <= review.rating ? (
-
-                                                        <FaStar
-                                                            key={star}
-                                                        />
-
-                                                    ) : (
-
-                                                        <FaRegStar
-                                                            key={star}
-                                                        />
-
-                                                    )
-
-                                                )
-
-                                            )}
-
-                                        </div>
-
-                                    </div>
-
-
-                                    <small>
-
-                                        {review.date}
-
-                                    </small>
+                                    )}
 
                                 </div>
 
 
-                                <p>
+                                {selectedRating > 0 && (
 
-                                    {review.text}
+                                    <p>
 
-                                </p>
+                                        You rated this property{" "}
 
+                                        <strong>
+                                            {selectedRating}
+                                        </strong>
+
+                                        {" "}out of 5
+
+                                    </p>
+
+                                )}
 
                             </div>
 
-                        )
 
-                    )
+                            {/* ================= REVIEW FORM ================= */}
 
-                )}
+                            <div className="review-form">
 
-            </div>
+                                <textarea
+                                    value={reviewText}
+                                    onChange={(e) =>
+                                        setReviewText(
+                                            e.target.value
+                                        )
+                                    }
+                                    placeholder="Write your review..."
+                                />
 
-        </div>
+
+                                <button
+                                    onClick={submitReview}
+                                >
+
+                                    Submit Review
+
+                                </button>
+
+                            </div>
 
 
-        {/* =================================================
+                            {/* ================= EXISTING REVIEWS ================= */}
+
+                            <div className="reviews-container">
+
+                                {reviews.length === 0 ? (
+
+                                    <p className="no-reviews">
+
+                                        No reviews yet.
+                                        Be the first to review this property.
+
+                                    </p>
+
+                                ) : (
+
+                                    reviews.map(
+
+                                        (review, index) => (
+
+                                            <div
+                                                className="review-card"
+                                                key={index}
+                                            >
+
+
+                                                <div className="review-card-header">
+
+
+                                                    <div>
+
+                                                        <h4>
+
+                                                            {review.name}
+
+                                                        </h4>
+
+
+                                                        <div className="review-stars">
+
+                                                            {[1, 2, 3, 4, 5].map(
+
+                                                                star => (
+
+                                                                    star <= review.rating ? (
+
+                                                                        <FaStar
+                                                                            key={star}
+                                                                        />
+
+                                                                    ) : (
+
+                                                                        <FaRegStar
+                                                                            key={star}
+                                                                        />
+
+                                                                    )
+
+                                                                )
+
+                                                            )}
+
+                                                        </div>
+
+                                                    </div>
+
+
+                                                    <small>
+
+                                                        {review.date}
+
+                                                    </small>
+
+                                                </div>
+
+
+                                                <p>
+
+                                                    {review.text}
+
+                                                </p>
+
+
+                                            </div>
+
+                                        )
+
+                                    )
+
+                                )}
+
+                            </div>
+
+                        </div>
+
+
+                        {/* =================================================
             RIGHT SIDE — IMAGE + CONFIDENCE
         ================================================= */}
 
-        <div className="review-right">
+                        <div className="review-right">
 
 
-            {/* ================= PROPERTY IMAGE ================= */}
+                            {/* ================= PROPERTY IMAGE ================= */}
 
-            <div className="review-property-image">
+                            <div className="review-property-image">
 
-                <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVN8qu2UTAb8D3Zb84I17b8en83iOrS-eRdUdJ1w6eI5R1Ykb2spLOKjst&s=10"
-                    alt="Property"
-                />
+                                <img
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVN8qu2UTAb8D3Zb84I17b8en83iOrS-eRdUdJ1w6eI5R1Ykb2spLOKjst&s=10"
+                                    alt="Property"
+                                />
 
-            </div>
-
-
-            {/* ================= TITLE ================= */}
-
-            <div className="review-confidence">
+                            </div>
 
 
-                <h3>
-                    Choose With Confidence
-                </h3>
+                            {/* ================= TITLE ================= */}
+
+                            <div className="review-confidence">
 
 
-                {/* ================= 4 POINTS ================= */}
+                                <h3>
+                                    Choose With Confidence
+                                </h3>
 
-                <div className="review-benefits-grid">
+
+                                {/* ================= 4 POINTS ================= */}
+
+                                <div className="review-benefits-grid">
 
 
-                    {/* POINT 1 */}
+                                    {/* POINT 1 */}
 
-                    <div className="review-benefit">
+                                    <div className="review-benefit">
 
-                        <FaComments />
+                                        <FaComments />
 
-                        <span>
-                            Real Stories
-                        </span>
+                                        <span>
+                                            Real Stories
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* POINT 2 */}
+
+                                    <div className="review-benefit">
+
+                                        <FaShieldHalved />
+
+                                        <span>
+                                            Honest Opinions
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* POINT 3 */}
+
+                                    <div className="review-benefit">
+
+                                        <FaLightbulb />
+
+                                        <span>
+                                            Clear Insights
+                                        </span>
+
+                                    </div>
+
+
+                                    {/* POINT 4 */}
+
+                                    <div className="review-benefit">
+
+                                        <FaHouseChimney />
+
+                                        <span>
+                                            Better Choices
+                                        </span>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
 
                     </div>
 
-
-                    {/* POINT 2 */}
-
-                    <div className="review-benefit">
-
-                        <FaShieldHalved />
-
-                        <span>
-                            Honest Opinions
-                        </span>
-
-                    </div>
-
-
-                    {/* POINT 3 */}
-
-                    <div className="review-benefit">
-
-                        <FaLightbulb />
-
-                        <span>
-                            Clear Insights
-                        </span>
-
-                    </div>
-
-
-                    {/* POINT 4 */}
-
-                    <div className="review-benefit">
-
-                        <FaHouseChimney />
-
-                        <span>
-                            Better Choices
-                        </span>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
+                </section>
 
 
             </div>

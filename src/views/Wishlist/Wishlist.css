@@ -16,10 +16,8 @@
   height: 430px;
 
   background:
-    linear-gradient(
-      rgba(12, 18, 32, 0.87),
-      rgba(12, 18, 32, 0.87)
-    ),
+    linear-gradient(rgba(12, 18, 32, 0.87),
+      rgba(12, 18, 32, 0.87)),
     url("../../assets/morden apartment.jpg");
 
   background-size: cover;
@@ -51,7 +49,7 @@
 
   border-radius: 50%;
 
-  background: #ff8533;
+  background: #d7702b;
 
   display: flex;
   align-items: center;
@@ -64,7 +62,7 @@
 .hero-label {
   margin: 0 0 12px;
 
-  color: #c88937;
+  color: #ff8533;
 
   font-size: 12px;
 
@@ -448,14 +446,13 @@
 
   margin: 0 0 5px;
 }
-.wishlist-property-info h3 {
-    margin: 5px 0 7px;
-    font-size: 17px;
-    color: #27364b;
 
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.wishlist-property-info h3 {
+  margin: 5px 0 7px;
+
+  font-size: 17px;
+
+  color: #27364b;
 }
 
 .wishlist-property-info p {
@@ -554,7 +551,7 @@
 
   padding: 15px 30px;
 
-  background: #e69a3c;
+  background: #f17719;
 
   color: #ffffff;
 
@@ -570,8 +567,8 @@
 }
 
 .browse-btn:hover {
-  background: #cf8226;
-
+  background: #662a03;
+  color: white;
   transform: translateY(-2px);
 
   box-shadow:
@@ -833,13 +830,4 @@ body.dark-mode .browse-btn:hover {
   .wishlist-property-card {
     max-width: 300px;
   }
-}.wishlist-location {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.wishlist-location svg {
-    flex-shrink: 0;
-    font-size: 13px;
 }

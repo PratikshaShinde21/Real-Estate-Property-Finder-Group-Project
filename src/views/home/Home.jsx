@@ -98,7 +98,7 @@ function Home() {
 
       <section className="explore-cities">
         <div className="cities-heading">
-          <h2>Explore by Cities</h2>
+          <h2>Explore <span style={{ color: "#ff8533", fontSize: "37px" }}>by Cities  </span> </h2>
           <span>
             Discover properties in some of the most popular cities.
           </span>
@@ -113,6 +113,7 @@ function Home() {
               properties={city.properties}
               description={city.description}
               price={city.price}
+              wikipedia={city.wikipedia}
               large={index === 0}
             />
           ))}
@@ -129,7 +130,7 @@ function Home() {
       {/* FEATURED PROPERTIE  */}
 
       <section className="featured-properties">
-        <h2>Featured Properties</h2>
+        <h2>Featured<span style={{ color: "#ff8533" }}> Properties</span></h2>
 
         <p className="section-subtitle">
           Discover our handpicked selection of premium properties.
@@ -167,7 +168,7 @@ function Home() {
 
             <p className="agent-small-title">NESTFINDER SUPPORT</p>
 
-            <h2>Talk to your property expert today!</h2>
+            <h2>Talk to your  property<span style={{ color: "#ff8533" }}> expert today!</span></h2>
 
             <p className="agent-highlight">
               Ready to find a home that truly fits your needs?

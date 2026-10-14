@@ -418,28 +418,28 @@ const About = () => {
 
           <TeamCard
             image={member1}
-            name="Member 1"
+            name="Tanishka Adhav"
             role="Developer"
             description="Works on developing and improving the project."
           />
 
           <TeamCard
             image={member2}
-            name="Member 2"
+            name="Pratiksha Shinde"
             role="Developer"
             description="Works on developing and improving the project."
           />
 
           <TeamCard
             image={member3}
-            name="Member 3"
+            name="Vedika Yadav"
             role="Developer"
             description="Works on developing and improving the project."
           />
 
           <TeamCard
             image={member4}
-            name="Member 4"
+            name="Gayatri Mhase"
             role="Developer"
             description="Works on developing and improving the project."
           />
@@ -632,7 +632,7 @@ const About = () => {
           the perfect place for you.
         </p>
 
-        <Link to="/properties" className="about-btn">
+        <Link to="/property" className="about-btn">
           Browse Properties
           <ArrowRight size={18} />
         </Link>

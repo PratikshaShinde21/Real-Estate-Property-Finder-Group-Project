@@ -16,25 +16,23 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/about" element={<About />} />
+
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="*" element={<NotFound />} />
-           <Route path="/property" element={<Property />} />
-         <Route
-                path="/property-detail"
-                element={<PropertyDetail />}
-            />
 
-<Route
-    path="/cart"
-    element={<Cart />}
-/>
+        <Route path="/property" element={<Property />} />
 
+        <Route path="/property-detail" element={<PropertyDetail />} />
+
+        <Route path="/cart" element={<Cart />} />
 
         <Route path="/login" element={<Login />} />
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
 

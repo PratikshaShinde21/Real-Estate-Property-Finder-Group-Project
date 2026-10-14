@@ -29,23 +29,23 @@ const Wishlist = () => {
 
   const [wishlist, setWishlist] = useState(() => {
     const currentUser = JSON.parse(
-        localStorage.getItem("currentUser")
+      localStorage.getItem("currentUser")
     );
 
     if (!currentUser) {
-        return [];
+      return [];
     }
 
     const wishlistKey =
-        "wishlist_" + currentUser.mobile;
+      "wishlist_" + currentUser.mobile;
 
     const savedWishlist =
-        localStorage.getItem(wishlistKey);
+      localStorage.getItem(wishlistKey);
 
     return savedWishlist
-        ? JSON.parse(savedWishlist)
-        : [];
-});
+      ? JSON.parse(savedWishlist)
+      : [];
+  });
   // =========================
   // FILTER
   // =========================
@@ -70,61 +70,61 @@ const Wishlist = () => {
 
   const removeFromWishlist = (id) => {
     const currentUser = JSON.parse(
-        localStorage.getItem("currentUser")
+      localStorage.getItem("currentUser")
     );
 
     if (!currentUser) {
-        return;
+      return;
     }
 
     const updatedWishlist = wishlist.filter(
-        (property) => property.id !== id
+      (property) => property.id !== id
     );
 
     setWishlist(updatedWishlist);
 
     const wishlistKey =
-        "wishlist_" + currentUser.mobile;
+      "wishlist_" + currentUser.mobile;
 
     localStorage.setItem(
-        wishlistKey,
-        JSON.stringify(updatedWishlist)
+      wishlistKey,
+      JSON.stringify(updatedWishlist)
     );
-};
+  };
 
   // =========================
   // SEARCH + FILTER
   // =========================
-let displayedProperties = wishlist.filter((property) => {
-  const text = search.toLowerCase();
+  let displayedProperties = wishlist.filter((property) => {
+    const text = search.toLowerCase();
 
-  const matchesSearch =
-    property.title?.toLowerCase().includes(text) ||
-    property.name?.toLowerCase().includes(text) ||
-    property.city?.toLowerCase().includes(text) ||
-    property.location?.toLowerCase().includes(text);
+    const matchesSearch =
+      property.title?.toLowerCase().includes(text) ||
+      property.name?.toLowerCase().includes(text) ||
+      property.city?.toLowerCase().includes(text) ||
+      property.location?.toLowerCase().includes(text);
 
-  const type = (property.type || "").toLowerCase();
-  const category = (property.category || "").toLowerCase();
+    const type = (property.type || "").toLowerCase();
+    const category = (property.category || "").toLowerCase();
 
-  let matchesFilter;
+    let matchesFilter;
 
-  if (propertyType === "All Properties") {
-    matchesFilter = true;
-  } else if (propertyType === "House") {
-    matchesFilter =
-      type === "house" ||
-      type === "home" ||
-      category === "house" ||
-      category === "home";
-  } else {
-    matchesFilter =
-      type === propertyType.toLowerCase() ||
-      category === propertyType.toLowerCase();
-  }
+    if (propertyType === "All Properties") {
+      matchesFilter = true;
+    } else if (propertyType === "House") {
+      matchesFilter =
+        type === "house" ||
+        type === "home" ||
+        category === "house" ||
+        category === "home";
+    } else {
+      matchesFilter =
+        type === propertyType.toLowerCase() ||
+        category === propertyType.toLowerCase();
+    }
 
-  return matchesSearch && matchesFilter;
-});
+    return matchesSearch && matchesFilter;
+  });
 
   // =========================
   // SORT
@@ -281,11 +281,10 @@ let displayedProperties = wishlist.filter((property) => {
 
 
             <div
-              className={`dropdown-menu ${
-                showFilter
+              className={`dropdown-menu ${showFilter
                   ? "show-dropdown"
                   : ""
-              }`}
+                }`}
             >
 
               <button
@@ -362,11 +361,10 @@ let displayedProperties = wishlist.filter((property) => {
 
 
             <div
-              className={`dropdown-menu sort-dropdown ${
-                showSort
+              className={`dropdown-menu sort-dropdown ${showSort
                   ? "show-dropdown"
                   : ""
-              }`}
+                }`}
             >
 
               <button
@@ -420,9 +418,9 @@ let displayedProperties = wishlist.filter((property) => {
                 <div className="wishlist-property-image">
 
                   <img
-  src={property.image || property.images?.[0]}
-  alt={property.title || property.name || "Property"}
-/>
+                    src={property.image || property.images?.[0]}
+                    alt={property.title || property.name || "Property"}
+                  />
 
                   <button
                     className="wishlist-remove-btn"
@@ -443,7 +441,7 @@ let displayedProperties = wishlist.filter((property) => {
                 <div className="wishlist-property-info">
 
                   <p className="wishlist-property-type">
-                   {property.type || property.category}
+                    {property.type || property.category}
                   </p>
 
                   <h3>
@@ -452,11 +450,11 @@ let displayedProperties = wishlist.filter((property) => {
                   </h3>
 
                   <p className="wishlist-location">
-    <FaLocationDot />
-    {property.city ||
-        property.name?.split(" in ").pop() ||
-        "Location"}
-</p>
+                    <FaLocationDot />
+                    {property.city ||
+                      property.name?.split(" in ").pop() ||
+                      "Location"}
+                  </p>
 
                   <strong>
                     {property.price}

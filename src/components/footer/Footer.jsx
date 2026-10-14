@@ -25,21 +25,47 @@ function Footer() {
 
           <h3>Quick Links</h3>
           <Link to="/">Home</Link>
-          <Link to="/properties">Properties</Link>
+          <Link to="/property">Property</Link>
           <Link to="/wishlist">Wishlist</Link>
-          <Link to="/card">Card</Link>
+          <Link to="/cart">Cart</Link>
 
         </div>
 
         {/* Customer Service */}
         <div className="footer-column">
-
           <h3>Popular Cities</h3>
-          <Link to="/properties">Mumbai</Link>
-          <Link to="/properties">Pune</Link>
-          <Link to="/properties">Nashik</Link>
-          <Link to="/properties">Nagpur</Link>
 
+          <a
+            href="https://en.wikipedia.org/wiki/Mumbai"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Mumbai
+          </a>
+
+          <a
+            href="https://en.wikipedia.org/wiki/Pune"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Pune
+          </a>
+
+          <a
+            href="https://en.wikipedia.org/wiki/Nashik"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Nashik
+          </a>
+
+          <a
+            href="https://en.wikipedia.org/wiki/Nagpur"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Nagpur
+          </a>
         </div>
         {/* Contact */}
         <div className="footer-column contact-column">

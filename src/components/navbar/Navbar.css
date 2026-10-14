@@ -9,12 +9,12 @@
   left: 0;
   right: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.28);
+  background-color: #181811;
   z-index: 1000;
   height: 75px;
 }
 
-/* LOGO */
+/* LOGObackground-color:#461d01; */
 
 .navbar-logo {
   display: flex;
@@ -29,7 +29,7 @@
 
 .navbar-logo svg {
   font-size: 40px;
-  color: rgb(245, 244, 244);
+  color: rgb(255, 252, 252);
 }
 
 .navbar-logo img {
@@ -78,7 +78,7 @@
 }
 
 .navbar-links button:hover {
-  color: #c9824b;
+  color: #ef9611;
   transform: translateY(-1px);
 }
 
@@ -93,13 +93,18 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  border: 1px solid #948377 !important;
+  border: 1px solid #0e0a08 !important;
   border-radius: 50% !important;
-  background: #b96565 !important;
+  background: #2d2323 !important;
   color: #222222 !important;
   font-size: 20px !important;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.theme-btn svg {
+color:#ff8533;
+stroke-width: 2.5;
 }
 
 .theme-btn:hover {
@@ -112,7 +117,7 @@
   background: transparent;
   font-size: 28px;
   cursor: pointer;
-  color: #222;
+  color: white;
 }
 
 .mobile-menu {
@@ -131,7 +136,7 @@ body.dark-mode .navbar-logo {
 }
 
 body.dark-mode .navbar-links button {
-  color: #eeeeee;
+  color: #ffffff;
 }
 
 body.dark-mode .navbar-links button:hover {
@@ -143,7 +148,7 @@ body.dark-mode .navbar-links button:hover {
 body.dark-mode .theme-btn {
   background: #333333 !important;
   border-color: #555555 !important;
-  color: #ffffff !important;
+  color: #180c0c !important;
 }
 
 /* DARK MODE */

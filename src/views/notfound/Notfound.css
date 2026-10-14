@@ -10,7 +10,7 @@
 
 .notfound p {
   margin: 1rem 0 1.5rem;
-  color: #444;
+  color: red;
 }
 
 .notfound-link {

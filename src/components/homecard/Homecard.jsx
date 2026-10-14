@@ -8,7 +8,7 @@ import {
   FiSliders,
   FiSearch,
   FiStar,
- FiHeart ,
+  FiHeart,
   FiMessageCircle,
   FiHeadphones
 } from "react-icons/fi";
@@ -29,20 +29,20 @@ export function Navbar() {
   const navigate = useNavigate();
 
 
-useEffect(() => {
-  const user = JSON.parse(localStorage.getItem("currentUser"));
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("currentUser"));
 
-  if (!user) return;
+    if (!user) return;
 
-  const wishlistKey = "wishlist_" + user.mobile;
+    const wishlistKey = "wishlist_" + user.mobile;
 
-  const wishlist =
-    JSON.parse(localStorage.getItem(wishlistKey)) || [];
+    const wishlist =
+      JSON.parse(localStorage.getItem(wishlistKey)) || [];
 
-  setIsWishlisted(
-    wishlist.some((item) => item.id === id)
-  );
-}, [id]);
+    setIsWishlisted(
+      wishlist.some((item) => item.id === id)
+    );
+  }, [id]);
 
   const [darkMode, setDarkMode] = useState(false);
 
@@ -72,7 +72,7 @@ useEffect(() => {
           Home
         </button>
 
-        <button onClick={() => navigate("/properties")}>
+        <button onClick={() => navigate("/property")}>
           Properties
         </button>
 
@@ -170,8 +170,12 @@ export function HeroSlider({ slides }) {
           FIND YOUR PERFECT PLACE
         </p>
 
-        <h1>  {slides[currentSlide].title}  </h1>
-
+        <h1>
+          {slides[currentSlide].title.split(" ").slice(0, -1).join(" ")}{" "}
+          <span>
+            {slides[currentSlide].title.split(" ").slice(-1).join(" ")}
+          </span>
+        </h1>
         <p className="hero-description">
           Discover beautiful properties in the best
           locations and find a place that truly feels
@@ -224,7 +228,7 @@ export function HeroSlider({ slides }) {
 
           <button
             className="hero-search-btn"
-            onClick={() => navigate("/properties")}
+            onClick={() => navigate("/property")}
           >
             <FiSearch />
             Search
@@ -298,6 +302,7 @@ export function CityCard({
   properties,
   price,
   large,
+  wikipedia
 }) {
 
   const navigate = useNavigate();
@@ -321,15 +326,14 @@ export function CityCard({
         <h4> {properties} </h4>
         <p> {price} </p>
 
-        <button
-          onClick={() =>
-            navigate(
-              `/properties?city=${name}`
-            )
-          }
+        <a
+          href={wikipedia}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="explore-btn"
         >
           <FiSearch /> Explore
-        </button>
+        </a>
       </div>
     </div>
   );
@@ -344,23 +348,23 @@ export function PropertyCard({
   rating,
 }) {
   const navigate = useNavigate();
-const [isWishlisted, setIsWishlisted] = useState(false);
-useEffect(() => {
-  const user = JSON.parse(
-    localStorage.getItem("currentUser")
-  );
+  const [isWishlisted, setIsWishlisted] = useState(false);
+  useEffect(() => {
+    const user = JSON.parse(
+      localStorage.getItem("currentUser")
+    );
 
-  if (!user) return;
+    if (!user) return;
 
-  const wishlistKey = "wishlist_" + user.mobile;
+    const wishlistKey = "wishlist_" + user.mobile;
 
-  const wishlist =
-    JSON.parse(localStorage.getItem(wishlistKey)) || [];
+    const wishlist =
+      JSON.parse(localStorage.getItem(wishlistKey)) || [];
 
-  setIsWishlisted(
-    wishlist.some((item) => item.id === id)
-  );
-}, [id]);
+    setIsWishlisted(
+      wishlist.some((item) => item.id === id)
+    );
+  }, [id]);
   const handleWishlist = () => {
     const user = JSON.parse(
       localStorage.getItem("currentUser")
@@ -395,94 +399,93 @@ useEffect(() => {
       const updatedWishlist = wishlist.filter(
         (item) => item.id !== id
       );
-localStorage.setItem(
-  wishlistKey,
-  JSON.stringify(updatedWishlist)
-);
+      localStorage.setItem(
+        wishlistKey,
+        JSON.stringify(updatedWishlist)
+      );
 
-setIsWishlisted(false);
+      setIsWishlisted(false);
 
-alert("Removed from Wishlist.");
-return;
+      alert("Removed from Wishlist.");
+      return;
     }
 
     const updatedWishlist = [
       ...wishlist,
       property,
     ];
-localStorage.setItem(
-  wishlistKey,
-  JSON.stringify(updatedWishlist)
-);
+    localStorage.setItem(
+      wishlistKey,
+      JSON.stringify(updatedWishlist)
+    );
 
-setIsWishlisted(true);
+    setIsWishlisted(true);
 
-alert("Successfully added to Wishlist ❤️");
+    alert("Successfully added to Wishlist ❤️");
   };
 
   return (
-  <div className="property-card">
+    <div className="property-card">
 
-    <div className="property-image-container">
-      <img
-        src={image}
-        alt={title}
-        className="property-image"
-      />
+      <div className="property-image-container">
+        <img
+          src={image}
+          alt={title}
+          className="property-image"
+        />
 
-    <button
-  className={`wishlist-btn ${
-    isWishlisted ? "wishlisted" : ""
-  }`}
-  onClick={handleWishlist}
-  aria-label="Add to Wishlist"
->
-  {isWishlisted ? (
-    <FaHeart
-      className="wishlist-heart"
-      color="#dc2626"
-    />
-  ) : (
-    <FiHeart
-      className="wishlist-heart"
-      color="#444"
-    />
-  )}
-</button>
+        <button
+          className={`wishlist-btn ${isWishlisted ? "wishlisted" : ""
+            }`}
+          onClick={handleWishlist}
+          aria-label="Add to Wishlist"
+        >
+          {isWishlisted ? (
+            <FaHeart
+              className="wishlist-heart"
+              color="#dc2626"
+            />
+          ) : (
+            <FiHeart
+              className="wishlist-heart"
+              color="#5f3c3c"
+            />
+          )}
+        </button>
+      </div>
+
+      <div className="property-content">
+        <h3>{title}</h3>
+
+        <div className="property-meta">
+          <p className="property-type">
+            {type}
+          </p>
+
+          <p className="property-city">
+            <FiMapPin />
+            {city}
+          </p>
+          <p className="property-rating">
+            ⭐ {rating}
+          </p>
+
+        </div>
+
+        <p className="property-price">
+          Price :  {price}
+        </p>
+
+        <button
+          className="view-details-btn"
+          onClick={handleWishlist}
+        >
+          Add to wishlist
+        </button>
+      </div>
+
     </div>
-
-    <div className="property-content">
-      <h3>{title}</h3>
-
-      <div className="property-meta">
-  <p className="property-type">
-    {type}
-  </p>
-
-  <p className="property-city">
-    <FiMapPin />
-    {city}
-  </p>
-   <p className="property-rating">
-        ⭐ {rating}
-      </p>
-
-</div>
-
-      <p className="property-price">
-       Price :  {price}
-      </p>
-
-           <button
-        className="view-details-btn"
-        onClick={handleWishlist}
-      >
-        Add to wishlist
-      </button>
-    </div>
-
-  </div>
-);
+  );
 }
 
 // SEARCH FROM MAP // 
@@ -502,7 +505,7 @@ export function SearchFromMap({
   const handleSearch = (e) => {
     e.preventDefault();
     navigate(
-      `/properties?location=${location}&type=${propertyType}`
+      `/property?location=${location}&type=${propertyType}`
     );
 
   };
@@ -520,7 +523,7 @@ export function SearchFromMap({
           </p>
 
           <h2>
-            Search from Map
+            Search <span style={{ color: "#ff8533" }}> from Map </span>
           </h2>
 
           <p className="map-description">

@@ -32,35 +32,40 @@
       "name": "Mumbai",
       "image": "mumbai.jpeg",
       "properties": "980+ Properties",
-      "price": "₹45L onwards"
+      "price": "₹45L onwards",
+      "wikipedia": "https://en.wikipedia.org/wiki/Mumbai"
     },
     {
       "id": 2,
       "name": "Pune",
       "image": "pune.jpeg",
       "properties": "490+ Properties",
-      "price": "₹30L onwards"
+      "price": "₹30L onwards",
+      "wikipedia": "https://en.wikipedia.org/wiki/Pune"
     },
     {
       "id": 3,
       "name": "Nashik",
       "image": "nashik.jpeg",
       "properties": "680+ Properties",
-      "price": "₹28L onwards"
+      "price": "₹28L onwards",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nashik"
     },
     {
       "id": 4,
       "name": "Ahilyanagar",
       "image": "ahilyanagaro.jpeg",
       "properties": "255+ Properties",
-      "price": "₹37L onwards"
+      "price": "₹37L onwards",
+      "wikipedia": "https://en.wikipedia.org/wiki/Ahilyanagar"
     },
     {
       "id": 5,
       "name": "Nagpur",
       "image": "nagpur.jpeg",
       "properties": "590+ Properties",
-      "price": "₹28L onwards"
+      "price": "₹28L onwards",
+      "wikipedia": "https://en.wikipedia.org/wiki/Nagpur"
     }
   ],
   "properties": [
@@ -70,7 +75,7 @@
       "image": "plottwo.jpeg",
       "type": "Apartment",
       "city": "Mumbai",
-      "price": "₹45,00,000",
+      "price": "₹ 45,00,000",
       "rating": "3.8"
     },
     {
@@ -84,7 +89,7 @@
     },
     {
       "id": 3,
-       "name": "Premium 1 BHK",
+      "name": "Premium 1 BHK",
       "image": "rowbanglotwo.jpeg",
       "type": "House",
       "city": "Nashik",

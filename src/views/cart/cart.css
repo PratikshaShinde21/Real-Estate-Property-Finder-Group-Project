@@ -1,4 +1,3 @@
-
 .cart-page {
     width: 100%;
     min-height: 100vh;
@@ -7,14 +6,12 @@
     padding-bottom: 70px;
 
     background:
-        linear-gradient(
-            180deg,
-            #faf8f4 0%,
+        linear-gradient(180deg,
+            #f9f8f8 0%,
             #ffffff 45%,
-            #f5efe6 100%
-        );
+            #f5efe6 100%);
 
-    color: #292722;
+    color: #222222;
 }
 
 
@@ -37,7 +34,8 @@
 
     gap: 25px;
 }
-.cart-header > div {
+
+.cart-header>div {
     min-width: 0;
 }
 
@@ -52,7 +50,7 @@
 
     margin-bottom: 18px;
 
-    color: #a27b42;
+    color: #ff8533;
 
     font-size: 11px;
     font-weight: 800;
@@ -72,7 +70,7 @@
 .cart-header h1 {
     margin: 0;
 
-    color: #292722;
+    color: #222222;
 
     font-family:
         Georgia,
@@ -93,7 +91,7 @@
 
     margin-top: 4px;
 
-    color: #a27b42;
+    color: #ff8533;
 }
 
 
@@ -102,7 +100,7 @@
 .cart-header p {
     margin: 22px 0 0;
 
-    color: #77736c;
+    color: #777777;
 
     font-size: 14px;
 
@@ -125,8 +123,7 @@
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1fr)
-        410px;
+        minmax(0, 1fr) 410px;
 
     gap: 38px;
 
@@ -163,7 +160,7 @@
 
     background: #ffffff;
 
-    border: 1px solid #e5ded4;
+    border: 1px solid #e7dbdb;
 
     border-radius: 18px;
 
@@ -179,7 +176,7 @@
 .cart-property:hover {
     transform: translateY(-5px);
 
-    border-color: #d6c5ad;
+    border-color: #e2a47b;
 
     box-shadow:
         0 18px 42px rgba(43, 38, 29, 0.11);
@@ -200,7 +197,7 @@
 
     overflow: hidden;
 
-    background: #eee8df;
+    background: #f1f1f1;
 }
 
 .cart-property-image img {
@@ -215,8 +212,7 @@
         transform 0.6s ease;
 }
 
-.cart-property:hover
-.cart-property-image img {
+.cart-property:hover .cart-property-image img {
     transform: scale(1.05);
 }
 
@@ -235,11 +231,9 @@
     height: 38%;
 
     background:
-        linear-gradient(
-            to bottom,
+        linear-gradient(to bottom,
             transparent,
-            rgba(0, 0, 0, 0.28)
-        );
+            rgba(0, 0, 0, 0.28));
 
     pointer-events: none;
 }
@@ -304,7 +298,7 @@
 .cart-property-details h2 {
     margin: 0 0 8px;
 
-    color: #292722;
+    color: #222222;
 
     font-family:
         Georgia,
@@ -340,7 +334,7 @@
 
     margin-bottom: 13px;
 
-    color: #77736c;
+    color: #777777;
 
     font-size: 11px;
 
@@ -354,7 +348,7 @@
 .cart-location svg {
     flex-shrink: 0;
 
-    color: #a27b42;
+    color: #ff8533;
 
     font-size: 12px;
 }
@@ -367,7 +361,7 @@
 .cart-property p {
     margin: 0 0 15px;
 
-    color: #77736c;
+    color: #777777;
 
     font-size: 11px;
 
@@ -406,13 +400,13 @@
 
     gap: 5px;
 
-    color: #625d55;
+    color: #666666;
 
     font-size: 10px;
 }
 
 .cart-features svg {
-    color: #a27b42;
+    color: #ff8533;
 
     font-size: 11px;
 }
@@ -434,11 +428,11 @@
     margin-bottom: 15px;
 
     border-top:
-        1px solid #eeeae3;
+        1px solid #f1f1f1;
 }
 
 .cart-price span {
-    color: #99938a;
+    color: #999999;
 
     font-size: 9px;
 
@@ -450,7 +444,7 @@
 }
 
 .cart-price strong {
-    color: #292722;
+    color: #222222;
 
     font-size: 19px;
 
@@ -507,17 +501,17 @@
 /* BUY NOW */
 
 .buy-now-btn {
-    border: 1px solid #292722;
+    border: none;
 
-    background: #292722;
+    background: #ff8533;
 
     color: #ffffff;
 }
 
 .buy-now-btn:hover {
-    border-color: #a27b42;
+    border-color: #662a03;
 
-    background: #a27b42;
+    background: #662a03;
 
     transform: translateY(-2px);
 }
@@ -526,19 +520,19 @@
 /* REMOVE */
 
 .remove-cart-btn {
-    border: 1px solid #ddd6cc;
+    border: 1px solid #e7dbdb;
 
-    background: #ffffff;
+    background: #ff8533;
 
-    color: #625d55;
+    color: #ffffff;
 }
 
 .remove-cart-btn:hover {
-    border-color: #b32732;
+    border-color: #662a03;
 
-    background: #fff8f8;
+    background: #662a03;
 
-    color: #b32732;
+    color: #ffffff;
 
     transform: translateY(-2px);
 }
@@ -559,7 +553,7 @@
 
     background: #ffffff;
 
-    border: 1px solid #e4ddd3;
+    border: 1px solid #e7dbdb;
 
     border-radius: 22px;
 
@@ -575,7 +569,7 @@
 
     margin-bottom: 10px;
 
-    color: #a27b42;
+    color: #ff8533;
 
     font-size: 9px;
 
@@ -592,7 +586,7 @@
 .cart-summary h2 {
     margin: 0 0 30px;
 
-    color: #292722;
+    color: #222222;
 
     font-family:
         Georgia,
@@ -620,13 +614,13 @@
 
     margin-bottom: 20px;
 
-    color: #77736c;
+    color: #777777;
 
     font-size: 12px;
 }
 
 .summary-row strong {
-    color: #393631;
+    color: #333333;
 
     font-size: 12px;
 }
@@ -650,11 +644,11 @@
     margin-top: 10px;
 
     border-top:
-        1px solid #e8e2d9;
+        1px solid #f1f1f1;
 }
 
 .summary-total span {
-    color: #393631;
+    color: #333333;
 
     font-size: 13px;
 
@@ -662,7 +656,7 @@
 }
 
 .summary-total strong {
-    color: #292722;
+    color: #222222;
 
     font-family:
         Georgia,
@@ -695,7 +689,7 @@
 
     border-radius: 8px;
 
-    background: #292722;
+    background: #ff8533;
 
     color: #ffffff;
 
@@ -711,7 +705,7 @@
 }
 
 .summary-buy-btn:hover {
-    background: #a27b42;
+    background: #662a03;
 
     transform: translateY(-2px);
 }
@@ -738,9 +732,9 @@
 
     border-radius: 8px;
 
-    background: #fffafa;
+    background: #ff8533;
 
-    color: #b32732;
+    color: #ffffff;
 
     font-family: inherit;
 
@@ -754,9 +748,9 @@
 }
 
 .cancel-order-btn:hover {
-    background: #fff1f1;
+    background: #662a03;
 
-    border-color: #d9aaaa;
+    border-color: #662a03;
 }
 
 
@@ -777,13 +771,13 @@
 
     gap: 9px;
 
-    border: 1px solid #ddd6cc;
+    border: 1px solid #e7dbdb;
 
     border-radius: 8px;
 
-    background: #ffffff;
+    background: #ff8533;
 
-    color: #625d55;
+    color: #ffffff;
 
     font-family: inherit;
 
@@ -797,11 +791,11 @@
 }
 
 .continue-shopping-btn:hover {
-    border-color: #a27b42;
+    border-color: #662a03;
 
-    color: #a27b42;
+    color: #ffffff;
 
-    background: #faf7f1;
+    background: #662a03;
 }
 
 /* =========================================================
@@ -817,7 +811,7 @@
 
     background: #ffffff;
 
-    border: 1px solid #e5ded4;
+    border: 1px solid #e7dbdb;
 
     border-radius: 18px;
 
@@ -828,7 +822,7 @@
 .empty-cart svg {
     margin-bottom: 18px;
 
-    color: #a27b42;
+    color: #ff8533;
 
     font-size: 38px;
 }
@@ -836,7 +830,7 @@
 .empty-cart h2 {
     margin: 0 0 8px;
 
-    color: #292722;
+    color: #222222;
 
     font-family:
         Georgia,
@@ -873,8 +867,7 @@
         padding-right: 35px;
 
         grid-template-columns:
-            minmax(0, 1fr)
-            350px;
+            minmax(0, 1fr) 350px;
 
         gap: 25px;
     }
@@ -993,14 +986,15 @@
     .cart-summary h2 {
         font-size: 27px;
     }
-}.cart-items:has(.cart-property:only-child) {
+}
+
+.cart-items:has(.cart-property:only-child) {
     grid-template-columns: 480px;
 
     justify-content: center;
 }
 
-.cart-items:has(.cart-property:only-child)
-.cart-property {
+.cart-items:has(.cart-property:only-child) .cart-property {
     width: 480px;
     max-width: 380px;
 }
@@ -1049,7 +1043,7 @@
 
     margin-bottom: 7px;
 
-    color:darkred;
+    color: darkred;
     shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 
     font-size: 14px;
@@ -1062,7 +1056,7 @@
 .journey-heading strong {
     display: block;
 
-    color: #292722;
+    color: #222222;
 
     font-family:
         Georgia,
@@ -1132,7 +1126,7 @@
 
     border: 1px solid #e1d8ca;
 
-    color: #9a7440;
+    color: #ff8533;
 
     font-size: 15px;
 
@@ -1143,11 +1137,11 @@
 /* FIRST / ACTIVE */
 
 .journey-step.active .journey-icon {
-    background: #292722;
+    background: #222222;
 
-    border-color: #292722;
+    border-color: #222222;
 
-    color: #ffffff;
+    color: #ff8533;
 }
 
 
@@ -1156,7 +1150,7 @@
 .journey-step strong {
     display: block;
 
-    color: #35312b;
+    color: #333333;
 
     font-size: 10px;
 
@@ -1196,9 +1190,9 @@
 .journey-step:hover .journey-icon {
     transform: translateY(-4px);
 
-    border-color: #a27b42;
+    border-color: #ff8533;
 
-    color: #a27b42;
+    color: #662a03;
 
     box-shadow:
         0 7px 18px rgba(43, 38, 29, 0.08);
@@ -1225,7 +1219,9 @@
     .cart-journey {
         display: none;
     }
-}.cart-journey {
+}
+
+.cart-journey {
     position: relative;
 }
 
@@ -1261,7 +1257,7 @@
 /* CART ICON */
 
 .cart-journey .cart-count svg {
-    color: #a27b42;
+    color: #ff8533;
 
     font-size: 13px;
 }
@@ -1270,7 +1266,7 @@
 /* NUMBER */
 
 .cart-journey .cart-count strong {
-    color: #292722;
+    color: #222222;
 
     font-size: 13px;
 
@@ -1281,7 +1277,7 @@
 /* PROPERTY / PROPERTIES */
 
 .cart-journey .cart-count span {
-    color: #77736c;
+    color: #777777;
 
     font-size: 11px;
 
@@ -1294,6 +1290,7 @@
 .cart-journey .journey-heading {
     padding-right: 145px;
 }
+
 /* =========================================
    EMPTY CART
 ========================================= */
@@ -1308,7 +1305,7 @@
     align-items: center;
     text-align: center;
 
-    background: #faf7f1;
+    background: #f9f8f8;
     border: 1px solid #e5ddd1;
     border-radius: 22px;
 
@@ -1331,7 +1328,7 @@
     border-radius: 50%;
 
     background: #eee4d4;
-    color: #a27b42;
+    color: #ff8533;
 
     font-size: 32px;
 }
@@ -1342,7 +1339,7 @@
 .empty-cart h2 {
     margin: 0 0 10px;
 
-    color: #292722;
+    color: #222222;
 
     font-family:
         Georgia,
@@ -1360,7 +1357,7 @@
 .empty-cart p {
     margin: 0 0 28px;
 
-    color: #77736c;
+    color: #777777;
 
     font-size: 14px;
     line-height: 1.6;
@@ -1381,11 +1378,10 @@
 
     padding: 0 20px;
     margin: 0;
-
-    border: 1px solid #292722;
+    border: none;
     border-radius: 8px;
 
-    background: #292722;
+    background: #ff8533;
     color: #ffffff;
 
     font-family: inherit;
@@ -1406,20 +1402,20 @@
 /* BUTTON ICON */
 
 .empty-cart button svg {
-    width: 15px !important;
-    height: 15px !important;
+    width: 15px;
+    height: 15px;
 
-    min-width: 15px !important;
-    max-width: 15px !important;
+    min-width: 15px;
+    max-width: 15px;
 
-    min-height: 15px !important;
-    max-height: 15px !important;
+    min-height: 15px;
+    max-height: 15px;
 
-    font-size: 15px !important;
+    font-size: 15px;
 
-    margin: 0 !important;
-    padding: 0 !important;
-
+    margin: 0;
+    padding: 0 ;
+    color: white;
     flex-shrink: 0;
 }
 
@@ -1427,8 +1423,8 @@
 /* HOVER */
 
 .empty-cart button:hover {
-    background: #a27b42;
-    border-color: #a27b42;
+    background: #662a03;
+    border-color: #662a03;
 
     transform: translateY(-2px);
 
@@ -1442,6 +1438,7 @@
     opacity: 0.43;
     border-radius: 20px;
 }
+
 /* =========================================================
    RESPONSIVE ONLY — ORIGINAL CSS ABOVE IS UNCHANGED
    ========================================================= */
@@ -1675,6 +1672,7 @@
         font-size: 10px;
     }
 }
+
 /* =========================================================
    RESPONSIVE FIX — CART JOURNEY
    ========================================================= */
@@ -1734,4 +1732,303 @@
     .journey-arrow {
         font-size: 14px;
     }
+}
+
+/* =========================================================
+   DARK MODE — CART PAGE
+========================================================= */
+
+body.dark-mode .cart-page {
+    background:
+        linear-gradient(180deg,
+            #121212 0%,
+            #181818 45%,
+            #211b16 100%);
+
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   CART HEADER
+========================================================= */
+
+body.dark-mode .cart-header h1 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .cart-header h1 span {
+    color: #ff8533;
+}
+
+body.dark-mode .cart-header p {
+    color: #b5b5b5;
+}
+
+body.dark-mode .cart-label {
+    color: #ff8533;
+}
+
+
+/* =========================================================
+   PROPERTY CARD
+========================================================= */
+
+body.dark-mode .cart-property {
+    background: #1e1e1e;
+
+    border-color: #333333;
+
+    box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .cart-property:hover {
+    border-color: #ff8533;
+
+    box-shadow:
+        0 18px 42px rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================================================
+   PROPERTY IMAGE
+========================================================= */
+
+body.dark-mode .cart-property-image {
+    background: #292929;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+body.dark-mode .cart-property-details h2 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .cart-property p {
+    color: #b5b5b5;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+body.dark-mode .cart-location {
+    color: #aaa;
+}
+
+body.dark-mode .cart-location svg {
+    color: #ff8533;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+body.dark-mode .cart-features span {
+    color: #c2c2c2;
+}
+
+body.dark-mode .cart-features svg {
+    color: #ff8533;
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+body.dark-mode .cart-price {
+    border-top-color: #333333;
+}
+
+body.dark-mode .cart-price span {
+    color: #999999;
+}
+
+body.dark-mode .cart-price strong {
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   REMOVE / BUY BUTTONS
+========================================================= */
+
+body.dark-mode .buy-now-btn,
+body.dark-mode .remove-cart-btn {
+    background: #ff8533;
+    color: #ffffff;
+}
+
+body.dark-mode .buy-now-btn:hover,
+body.dark-mode .remove-cart-btn:hover {
+    background: #662a03;
+}
+
+
+/* =========================================================
+   ORDER SUMMARY
+========================================================= */
+
+body.dark-mode .cart-summary {
+    background: #1e1e1e;
+
+    border-color: #333333;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .cart-summary-label {
+    color: #ff8533;
+}
+
+body.dark-mode .cart-summary h2 {
+    color: #f5f5f5;
+}
+
+body.dark-mode .summary-row {
+    color: #aaa;
+}
+
+body.dark-mode .summary-row strong {
+    color: #e5e5e5;
+}
+
+body.dark-mode .summary-total {
+    border-top-color: #333333;
+}
+
+body.dark-mode .summary-total span {
+    color: #ddd;
+}
+
+body.dark-mode .summary-total strong {
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   SUMMARY BUTTONS
+========================================================= */
+
+body.dark-mode .summary-buy-btn,
+body.dark-mode .cancel-order-btn,
+body.dark-mode .continue-shopping-btn {
+    background: #ff8533;
+    color: #ffffff;
+}
+
+body.dark-mode .summary-buy-btn:hover,
+body.dark-mode .cancel-order-btn:hover,
+body.dark-mode .continue-shopping-btn:hover {
+    background: #662a03;
+}
+
+
+/* =========================================================
+   PROPERTY JOURNEY
+========================================================= */
+
+body.dark-mode .cart-journey {
+    background: rgba(35, 31, 27, 0.9);
+
+    border-color: #3b342d;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .journey-heading span {
+    color: #ff8533;
+}
+
+body.dark-mode .journey-heading strong {
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   JOURNEY ICONS
+========================================================= */
+
+body.dark-mode .journey-icon {
+    background: #242424;
+
+    border-color: #444444;
+
+    color: #ff8533;
+}
+
+body.dark-mode .journey-step.active .journey-icon {
+    background: #f5f5f5;
+
+    border-color: #f5f5f5;
+
+    color: #ff8533;
+}
+
+body.dark-mode .journey-step strong {
+    color: #e5e5e5;
+}
+
+body.dark-mode .journey-step span {
+    color: #ff9b68;
+}
+
+body.dark-mode .journey-arrow {
+    color: #a88c68;
+}
+
+
+/* JOURNEY HOVER */
+
+body.dark-mode .journey-step:hover .journey-icon {
+    border-color: #ff8533;
+
+    color: #ff8533;
+
+    box-shadow:
+        0 7px 18px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   CART COUNT
+========================================================= */
+
+body.dark-mode .cart-journey .cart-count {
+    background: #242424;
+
+    border-color: #444444;
+
+    box-shadow:
+        0 5px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .cart-journey .cart-count svg {
+    color: #ff8533;
+}
+
+body.dark-mode .cart-journey .cart-count strong {
+    color: #f5f5f5;
+}
+
+body.dark-mode .cart-journey .cart-count span {
+    color: #aaa;
+}
+
+
+/* =========================================================
+   EMPTY CART
+========================================================= */
+
+body.dark-mode .empty-cart {
+    background: #424242;
 }

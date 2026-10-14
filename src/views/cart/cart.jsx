@@ -12,7 +12,7 @@ import {
     FaHouse,
     FaHeart,
     FaMagnifyingGlass,
-    
+
 } from "react-icons/fa6";
 
 
@@ -37,11 +37,7 @@ function Cart() {
             );
 
         if (!currentUser) {
-
-            alert("Please Login First");
-
-            navigate("/login");
-
+            setCart([]);
             return;
         }
 
@@ -68,8 +64,9 @@ function Cart() {
             JSON.parse(
                 localStorage.getItem("currentUser")
             );
-
         if (!currentUser) {
+            alert("Please login first to remove a property.");
+            navigate("/login");
             return;
         }
 
@@ -97,18 +94,22 @@ function Cart() {
     // ==========================================
 
     const buyNow = (property) => {
+        const currentUser =
+            JSON.parse(localStorage.getItem("currentUser"));
 
-        alert(
-            `${property.name} purchased successfully! 🎉`
-        );
+        if (!currentUser) {
+            alert("Please login first to purchase a property.");
+            navigate("/login");
+            return;
+        }
 
+        alert(`${property.name} purchased successfully! 🎉`);
     };
 
 
     // ==========================================
     // CANCEL ORDER
     // ==========================================
-
     const cancelOrder = () => {
 
         const currentUser =
@@ -117,6 +118,8 @@ function Cart() {
             );
 
         if (!currentUser) {
+            alert("Please login first to cancel your order.");
+            navigate("/login");
             return;
         }
 
@@ -128,8 +131,8 @@ function Cart() {
         setCart([]);
 
         alert("Order cancelled successfully.");
-
     };
+
 
 
     // ==========================================
@@ -213,87 +216,87 @@ function Cart() {
 
                 </div>
                 <div className="cart-person-image">
-        <img
-            src="https://i.imgur.com/F0QQrd7.jpeg"
-            alt="Real estate advisor"
-        />
-    </div>
+                    <img
+                        src="https://i.imgur.com/F0QQrd7.jpeg"
+                        alt="Real estate advisor"
+                    />
+                </div>
                 <div className="cart-journey">
- <div className="cart-count">
-        <FaCartShopping />
+                    <div className="cart-count">
+                        <FaCartShopping />
 
-        <strong>
-            {cart.length}
-        </strong>
+                        <strong>
+                            {cart.length}
+                        </strong>
 
-        <span>
-            {cart.length === 1
-                ? "Property"
-                : "Properties"}
-        </span>
-    </div>
-    <div className="journey-heading">
-        <span>YOUR PROPERTY JOURNEY</span>
-        <strong>From search to<br />your new home.</strong>
-    </div>
+                        <span>
+                            {cart.length === 1
+                                ? "Property"
+                                : "Properties"}
+                        </span>
+                    </div>
+                    <div className="journey-heading">
+                        <span>YOUR PROPERTY JOURNEY</span>
+                        <strong>From search to<br />your new home.</strong>
+                    </div>
 
-    <div className="journey-steps">
+                    <div className="journey-steps">
 
-        <div className="journey-step active">
-            <div className="journey-icon">
-                <FaMagnifyingGlass />
-            </div>
+                        <div className="journey-step active">
+                            <div className="journey-icon">
+                                <FaMagnifyingGlass />
+                            </div>
 
-            <div>
-                <strong>Explore</strong>
-                <span>Discover properties</span>
-            </div>
-        </div>
+                            <div>
+                                <strong>Explore</strong>
+                                <span>Discover properties</span>
+                            </div>
+                        </div>
 
-        <div className="journey-arrow">→</div>
+                        <div className="journey-arrow">→</div>
 
-        <div className="journey-step">
-            <div className="journey-icon">
-                <FaHeart />
-            </div>
+                        <div className="journey-step">
+                            <div className="journey-icon">
+                                <FaHeart />
+                            </div>
 
-            <div>
-                <strong>Shortlist</strong>
-                <span>Save your favourites</span>
-            </div>
-        </div>
+                            <div>
+                                <strong>Shortlist</strong>
+                                <span>Save your favourites</span>
+                            </div>
+                        </div>
 
-        <div className="journey-arrow">→</div>
+                        <div className="journey-arrow">→</div>
 
-        <div className="journey-step">
-            <div className="journey-icon">
-                <FaCartShopping />
-            </div>
+                        <div className="journey-step">
+                            <div className="journey-icon">
+                                <FaCartShopping />
+                            </div>
 
-            <div>
-                <strong>Choose</strong>
-                <span>Review your selection</span>
-            </div>
-        </div>
+                            <div>
+                                <strong>Choose</strong>
+                                <span>Review your selection</span>
+                            </div>
+                        </div>
 
-        <div className="journey-arrow">→</div>
+                        <div className="journey-arrow">→</div>
 
-        <div className="journey-step">
-            <div className="journey-icon">
-                <FaHouse />
-            </div>
+                        <div className="journey-step">
+                            <div className="journey-icon">
+                                <FaHouse />
+                            </div>
 
-            <div>
-                <strong>Move In</strong>
-                <span>Find your next home</span>
-            </div>
-        </div>
+                            <div>
+                                <strong>Move In</strong>
+                                <span>Find your next home</span>
+                            </div>
+                        </div>
 
-    </div>
+                    </div>
 
-</div>
+                </div>
 
-               
+
 
             </div>
 
@@ -351,10 +354,10 @@ function Cart() {
 
                                 <div className="cart-property-image">
 
-                                    
-                                       <img src={property.images?.[0]} alt={property.name} />
-                                        
-                                    
+
+                                    <img src={property.images?.[0]} alt={property.name} />
+
+
 
                                 </div>
 
@@ -397,9 +400,9 @@ function Cart() {
                                         <span>
                                             Price :
                                         </span>
- ₹
+                                        ₹
                                         <strong>
-                                            
+
                                             {getPrice(
                                                 property.price
                                             ).toLocaleString(
@@ -480,8 +483,8 @@ function Cart() {
                             </span>
 
                             <strong>
-                              
-                                  ₹ {totalPrice.toLocaleString(
+
+                                ₹ {totalPrice.toLocaleString(
                                     "en-IN"
                                 )}
                             </strong>
